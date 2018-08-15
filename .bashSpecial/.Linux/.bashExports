@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# This file is loaded from .bash_profile 'array for loop'
+echo "	.bashSpecial loaded successfully"
+
+# System Specific Exports for Linux Distros
+
+# --> added by Jason to enable myScripts --:
+export PATH="$HOME/.bash/.bash_myExecutables/bin:$PATH"
+
+

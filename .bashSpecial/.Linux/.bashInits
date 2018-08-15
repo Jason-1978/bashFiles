@@ -5,5 +5,5 @@
 # Created: 8-13-2018
 # Modified:
 
-# Enable screen sharing to remote using ssh on Raspberry Pi, etc.
-#vncserver :1
+# Enable screen sharing to remote using ssh on Raspberry Pis:
+vncserver :1

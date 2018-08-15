@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# This file is loaded from .bash_profile 'array for loop'
+echo "	.bashAliasSpec loaded successfully"
+
+echo "		...but is not used."

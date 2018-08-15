@@ -51,3 +51,8 @@ alias makeFile="$EXECUTABLES/makeFile.sh"
 alias exportBash="$EXECUTABLES/exportBash.sh"
 	# automate bash environment settings to remote mirror location
 
+### BASH SSH ALIASES---->
+
+alias mac="ssh jason@10.0.1.53"
+alias zw1="ssh pi@10.0.1.53"
+alias 3bp="ssh jason@10.0.1.54"

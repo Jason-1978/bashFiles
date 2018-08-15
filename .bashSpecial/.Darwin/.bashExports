@@ -9,6 +9,6 @@ echo "	.bashSpecial loaded successfully"
 export PATH="/anaconda3/bin:$PATH"
 
 # --> added by Jason to enable myScripts --:
-export PATH="$HOME/.bash_myExecutables/bin:$PATH"
+export PATH="$HOME/.bash/.bash_myExecutables/bin:$PATH"
 
 

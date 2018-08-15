@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Author: Jason Kralik
+# Purpose: Automate presets for this machine.
+# Created: 8-13-2018
+# Modified:
+
+
+# This file is loaded from .bash_profile 'array for loop'
+echo "	.bashSpecial loaded successfully"
+
+echo "		...but is not used."
+
+# Enable screen sharing to remote using ssh on Raspberry Pi, etc.
+#vncserver :1
