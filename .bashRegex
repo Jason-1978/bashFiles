@@ -1,0 +1,56 @@
+### REGULAR EXPRESSIONS ###
+
+# Author: Jason Kralik
+# Purpose: Organization of common regular expression aliases.
+# Created: Masy 21, 2018
+# Modified: N/A
+
+# NOTE: Cross-reference intended additions with current environmental variables by using the command:
+# -->  'env | less'
+
+### REGEX KEY ###
+#	
+#	MetaCharacters (escape required --> '\' )
+#  -->	.[]{}\|^$?*+
+#  
+#  Characters, digits & spaces
+#    .  -> Any characters except new line
+#    \d -> Digit (0-9)
+#    \D -> Not a digit (0-9)
+#	   \w -> Word character (a-z, A-Z, 0-9, _)
+#    \W -> Not a word character
+#    \s -> Whitespace (space, tab, newline)
+#    \S -> Not whitespace
+#  
+#  Anchors (ie-match invisible positions before/after chars, digits, etc.)
+#    \b -> Word boundary -> placed before/after
+#    \B -> Not a word boundary -> placed before/after
+#    ^  -> Beginning of string (or line)
+#    $  -> End of string 
+#  
+#  
+#    []   -> Matches characters in brackets
+#    [^ ] -> Matches char's NOT in brackets
+#         -> eg -> [^a-z] every char that is NOT 'a-z'
+#    |    -> Either Or
+#    ()   -> Group
+#  
+#  Quantifiers:
+#    *     -> 0 or more
+#    +     -> 1 or more
+#    ?     -> 0 or one
+#    {3}   -> Exact number
+#    {3,4} -> Range of numbers (min, max)
+#
+#  Examples:
+#    Using a variety of syntax -->
+#       M(r|s|rs)\.?\s[A-Z]\w* -> Mr/Ms/Mrs (Name)
+#    Grouping -->
+#       https?://(www\.)?(\w+)(\.\w+) 
+#        ----> "$1"="www."  "$2"=domainName  "$3"=topLevelDomain
+
+# EXPORT REGEX_DOMAIN=https?://(www\.)?\w+\.\w+
+
+# EXPORT REGEX_EMAIL=[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+
+
+# EXPORT REGEX_PHONE=\d{3}(-|.)\d{3}(-|.)\d{4}

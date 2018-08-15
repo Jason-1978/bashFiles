@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# This file is loaded from .bash_profile 'array for loop'
+echo "	.bashSpecial loaded successfully"
+
+# System Specific Exports for my MacBook
+
+# --> added by Anaconda3 5.1.0 installer --:
+export PATH="/anaconda3/bin:$PATH"
+
+# --> added by Jason to enable myScripts --:
+export PATH="$HOME/.bash_myExecutables/bin:$PATH"
+
+

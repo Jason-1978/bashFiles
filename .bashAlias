@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# This file is loaded from .bash_profile 'array for loop'
+echo "	.bashAlias loaded successfully"
+
+
+
+################################################
+#  ALIAS DIRECTORY:                            
+#     --> Bash Command Aliases                 
+#     --> Bash SSH Aliases*
+#     --> Bash Application Aliases*            
+#     --> Bash Executable Script Aliases*
+#	* See .bashAliasSpec for system specific aliases
+################################################
+
+### BASH COMMAND ALIASES----> 
+
+alias blogin="$exec bash --login" 
+	# restarts bash
+alias root="cd /" 
+	# changes directory to 'root directory'
+alias rm="rm -ir" 
+	# adds confirmation question before running this command
+alias mv="mv -i" 
+	# adds confirmation question before running this command
+alias cp="cp -i" 
+	# adds confirmation question before running this command
+alias grep="grep --color" 
+	# adds color in grep
+alias ls="ls -FG"	
+	# adds / directory, * executable, @ symbolic link, = socket, % whiteout, | FIFO
+alias lso="ls -AoFG" 
+	# -Ao alias for ls
+alias less="less -M" 
+	# adds file path & % at bottom of each page in less 
+alias sbash="source ~/.bash_profile"
+	# sources _profile rc Alias Prompt etc.
+
+alias shutdown="sudo shutdown -h now"
+	# immediate shutdown
+alias reboot="sudo shutdown -r now"
+	# immediate reboot
+
+### BASH EXECUTABLE ALIASES---->
+
+EXECUTABLES="$HOME/.bash/.bash_myExecutables/bin"
+
+alias makeFile="$EXECUTABLES/makeFile.sh"
+	# touch using flags 
+alias exportBash="$EXECUTABLES/exportBash.sh"
+	# automate bash environment settings to remote mirror location
+

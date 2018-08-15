@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Author: Jason Kralik
+# Purpose: Automate presets for this machine.
+# Created: 8-13-2018
+# Modified:
+
+# Enable screen sharing to remote using ssh on Raspberry Pi, etc.
+#vncserver :1
