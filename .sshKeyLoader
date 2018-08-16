@@ -13,7 +13,7 @@
 
 # NOTE: This may not be the best way to facilitate this but it works. It seems like more of a bandaid than a fix.
 
-declare -a sshPrivateKeys=(rpi_3b rpi_0w Jasons-MacBook-Pro.local) 
+declare -a sshPrivateKeys=(rpi_3b rpi_0w1 Jasons-MacBook-Pro.local) 
 systemName=$(hostname)
 
 echo "...attempting to load ssh key(s) for $systemName:"
