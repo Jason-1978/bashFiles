@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#############################################
+
+# Author: Jason Kralik
+# Purpose: Load .ssh keys when shell is opened
+#  
+# FileName: .sshKeyLoader
+# Created: 08/13/18 
+# Modifed: 
+
+#############################################
+
+# NOTE: This may not be the best way to facilitate this but it works. It seems like more of a bandaid than a fix.
+
+declare -a sshPrivateKeys=(raspberry-pi-3B_rsa)
+
+echo "...attempting to load ${#sshPrivateKeys[@]} ssh key(s):"
+
+for i in "${sshPrivateKeys[@]}"
+do
+	if [ -f ~/.ssh/$i ]; then
+		ssh-add ~/.ssh/$i
+	else
+		echo "	ERROR: $i failed to load."
+	fi
+done

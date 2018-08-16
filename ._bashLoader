@@ -1,0 +1,54 @@
+echo "._bashLoader is running..."
+
+# Bash runs by intitializing this file so from this file I am 
+#		intitializing the rest of my customizations by seperating 
+#		these customizations into seperate files.
+#
+#	This profile was first created on my MacBook for use only
+#		there but I am now customizing it to be used on any device
+#		such as raspberry pi, etc.
+
+#################################################################
+# ***IMPORTANT NOTES ON NEEDED IMPROVEMENTS TO PREVENT BUGS***  #
+#   --------------------------------------------------------    #
+# NOTE-->>> ARRAYS are NOT supported on all bash versions and   #
+#  should be tested before this is used a script should be      #
+#  included to check                                            #
+# http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_10_02.html #
+#################################################################
+
+# For each name in file array load the cooresponding file--:
+
+declare -a names=(rc Alias Prompt)
+
+echo "...attempting to load ${#names[@]} general file(s):"
+
+for i in "${names[@]}"
+do
+	if [ -f ~/.bash/.bash$i ]; then 
+		source ~/.bash/.bash$i
+	else
+		echo "	ERROR: .bash$i did NOT load."
+	fi
+done
+
+declare -a special=(AliasSpec Exports)
+
+OS=$(uname)
+
+echo "...attempting to load ${#special[@]} file(s) for $OS:"
+
+for i in "${special[@]}"
+do
+	if [ -f ~/.bash/.bashSpecial/.$OS/.bash$i ]; then
+		source ~/.bash/.bashSpecial/.$OS/.bash$i
+	else
+		echo "	ERROR: .bash$i did NOT load."
+	fi
+done
+
+if [ -f ~/.bash/.sshKeyLoader ]; then
+	source ~/.bash/.sshKeyLoader
+else 
+	echo "	ERROR: .sshKeyLoader did not load."
+fi
