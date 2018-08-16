@@ -57,4 +57,4 @@ alias ubash="$EXECUTABLES/updateBashGit.sh"
 
 alias mac="ssh jason@10.0.1.53"
 alias zw1="ssh pi@10.0.1.53"
-alias rasp3b="ssh jason@10.0.1.54"
+alias rasp3b="ssh pi@10.0.1.54"
