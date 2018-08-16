@@ -13,15 +13,21 @@
 
 # NOTE: This may not be the best way to facilitate this but it works. It seems like more of a bandaid than a fix.
 
-declare -a sshPrivateKeys=(raspberry-pi-3B_rsa)
+declare -a sshPrivateKeys=(rpi_3b rpi_0w Jasons-MacBook-Pro.local) 
+systemName=$(hostname)
 
-echo "...attempting to load ${#sshPrivateKeys[@]} ssh key(s):"
+echo "...attempting to load ssh key(s) for $systemName:"
+
 
 for i in "${sshPrivateKeys[@]}"
 do
-	if [ -f ~/.ssh/$i ]; then
-		ssh-add ~/.ssh/$i
-	else
-		echo "	ERROR: $i failed to load."
+#	echo "${i}_rsa"
+	if [ $i != $systemName ]; then
+		if [ -f ~/.ssh/${i}_rsa ]; then
+			ssh-add ~/.ssh/${i}_rsa
+			echo "	SSH key loaded for $i host."
+		else
+			echo "	ERROR: ${i}_rsa failed to load."
+		fi
 	fi
 done
