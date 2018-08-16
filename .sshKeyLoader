@@ -21,7 +21,6 @@ echo "...attempting to load ssh key(s) for $systemName:"
 
 for i in "${sshPrivateKeys[@]}"
 do
-#	echo "${i}_rsa"
 	if [ $i != $systemName ]; then
 		if [ -f ~/.ssh/${i}_rsa ]; then
 			ssh-add ~/.ssh/${i}_rsa
