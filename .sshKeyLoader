@@ -18,13 +18,13 @@ systemName=$(hostname)
 
 echo "...attempting to load ssh key(s) for $systemName:"
 
-
 for i in "${sshPrivateKeys[@]}"
 do
 	if [ $i != $systemName ]; then
+		echo " "
 		if [ -f ~/.ssh/${i}_rsa ]; then
-			ssh-add ~/.ssh/${i}_rsa
-			echo "	SSH key loaded for $i host."
+			ssh-add -Kq ~/.ssh/${i}_rsa
+			# echo "	SSH key loaded for $i host."
 		else
 			echo "	ERROR: ${i}_rsa failed to load."
 		fi

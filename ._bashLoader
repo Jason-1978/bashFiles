@@ -1,4 +1,4 @@
-echo "._bashLoader is running..."
+echo "	._bashLoader is running..."
 
 # Bash runs by intitializing this file so from this file I am 
 #		intitializing the rest of my customizations by seperating 
@@ -21,7 +21,7 @@ echo "._bashLoader is running..."
 
 declare -a names=(rc Alias Prompt)
 
-echo "...attempting to load ${#names[@]} general file(s):"
+echo "...${#names[@]} general file(s):"
 
 for i in "${names[@]}"
 do
@@ -36,7 +36,7 @@ declare -a special=(AliasSpec Exports)
 
 OS=$(uname)
 
-echo "...attempting to load ${#special[@]} file(s) for $OS:"
+echo "...${#special[@]} file(s) for $OS:"
 
 for i in "${special[@]}"
 do
