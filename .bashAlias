@@ -50,6 +50,8 @@ alias makeFile="$EXECUTABLES/makeFile.sh"
 	# touch using flags 
 alias exportBash="$EXECUTABLES/exportBash.sh"
 	# automate bash environment settings to remote mirror location
+alias ubash="$EXECUTABLES/updateBashGit.sh"
+	#automate bash git repo
 
 ### BASH SSH ALIASES---->
 
