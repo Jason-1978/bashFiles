@@ -46,9 +46,3 @@ do
 		echo "	ERROR: .bash$i did NOT load."
 	fi
 done
-
-if [ -f ~/.bash/.sshKeyLoader ]; then
-	source ~/.bash/.sshKeyLoader
-else 
-	echo "	ERROR: .sshKeyLoader did not load."
-fi

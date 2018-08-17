@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# This is a test script to see if this directory will work.
-
-printf "Hello World"
-printf ""

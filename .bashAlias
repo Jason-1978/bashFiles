@@ -3,7 +3,7 @@
 # This file is loaded from .bash_profile 'array for loop'
 echo "	.bashAlias loaded successfully"
 
-
+EXECUTABLES="$HOME/.bash/.bash_myExecutables/bin"
 
 ################################################
 #  ALIAS DIRECTORY:                            
@@ -16,8 +16,6 @@ echo "	.bashAlias loaded successfully"
 
 ### BASH COMMAND ALIASES----> 
 
-alias blogin="$exec bash --login" 
-	# restarts bash
 alias root="cd /" 
 	# changes directory to 'root directory'
 alias rm="rm -ir" 
@@ -34,9 +32,13 @@ alias lso="ls -AoFG"
 	# -Ao alias for ls
 alias less="less -M" 
 	# adds file path & % at bottom of each page in less 
+
+### BASH SYSTEM ALIASES---->
+
+alias blogin="$exec bash --login" 
+	# restarts bash
 alias sbash="source ~/.bash_profile"
 	# sources _profile rc Alias Prompt etc.
-
 alias shutdown="sudo shutdown -h now"
 	# immediate shutdown
 alias reboot="sudo shutdown -r now"
@@ -44,17 +46,15 @@ alias reboot="sudo shutdown -r now"
 
 ### BASH EXECUTABLE ALIASES---->
 
-EXECUTABLES="$HOME/.bash/.bash_myExecutables/bin"
-
+alias hello="$EXECUTABLES/helloWorld.sh"
+	# Just for fun
 alias makeFile="$EXECUTABLES/makeFile.sh"
 	# touch using flags 
-alias exportBash="$EXECUTABLES/exportBash.sh"
-	# automate bash environment settings to remote mirror location
 alias ubash="$EXECUTABLES/updateBashGit.sh"
 	#automate bash git repo
 
 ### BASH SSH ALIASES---->
 
-alias mac="ssh jason@10.0.1.53"
-alias zw1="ssh pi@10.0.1.53"
+alias macbook="ssh jason@10.0.1.53"
+alias raspzw1="ssh pi@10.0.1.53"
 alias rasp3b="ssh pi@10.0.1.54"
