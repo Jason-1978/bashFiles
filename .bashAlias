@@ -48,13 +48,23 @@ alias reboot="sudo shutdown -r now"
 
 alias hello="$EXECUTABLES/helloWorld.sh"
 	# Just for fun
+alias playground="$EXECUTABLES/playground.sh"
+	# Quickly execute code from anywhere in the system to test what is currently input
+	# ARGS: For safety --safe flag must be used to execute
 alias makeFile="$EXECUTABLES/makeFile.sh"
-	# touch using flags 
+	# 'touch' using flags with automatic formating and opening of file
+	# ARGS: -b (bash executable) -p (python) -t (plain text) [no arg = regular touch]
 alias ubash="$EXECUTABLES/updateBashGit.sh"
-	#automate bash git repo
-
+	# automate bash git repo to my github repo [https://github.com/Jason-1978/bashFiles]
+alias keySend="$EXECUTABLES/ssh-keySend.sh"
+	# automate keysend to remote
+	# ARGS: username + IP eg--> pi@10.0.1.53
+alias passwdLogin="$EXECUTABLES/sshPasswordSwitch.sh"
+	# use this to deny, allow or set back to default remote ssh login through passwords
+	# ARGS: --yes --no --default
+	
 ### BASH SSH ALIASES---->
 
-alias macbook="ssh jason@10.0.1.53"
-alias raspzw1="ssh pi@10.0.1.53"
+alias macbook="ssh jason@10.0.1.35"
+alias raspzw1="ssh pi@10.0.1.55"
 alias rasp3b="ssh pi@10.0.1.54"

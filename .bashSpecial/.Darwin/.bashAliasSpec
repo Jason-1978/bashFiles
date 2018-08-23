@@ -3,5 +3,4 @@
 # This file is loaded from .bash_profile 'array for loop'
 echo "	.bashAliasSpec loaded successfully"
 
-alias ssh-zero-1="ssh pi@10.0.1.53"
-alias ssh-3b="ssh jason@10.0.1.54"
+echo "		...but is not used."
