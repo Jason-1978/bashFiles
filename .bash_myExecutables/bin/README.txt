@@ -1,4 +1,5 @@
 
+Note: The scripts in this directory are auto loaded through ._bashLoasder through .bash_profile and have aliases kept in .bashAliases
 
 #############################################
 
@@ -7,7 +8,7 @@
 #  
 # FileName: README.txt
 # Created: 08/22/18 
-# Modifed: 
+# Modified: 
 
 #############################################
 

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This file is loaded from ._bashLoader 'array for loop'
+echo "  .bashAlias loaded successfully"
+
 # Author: Jason Kralik
 # Purpose: Automate presets for this machine.
 # Created: 8-13-2018
