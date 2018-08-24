@@ -32,7 +32,7 @@ do
 	fi
 done
 
-declare -a special=(AliasSpec Exports)
+declare -a special=(AliasSpec Exports Inits)
 
 OS=$(uname)
 
