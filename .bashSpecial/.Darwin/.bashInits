@@ -3,12 +3,22 @@
 # Author: Jason Kralik
 # Purpose: Automate presets for this machine.
 # Created: 8-13-2018
-# Modified:
+# Modified: 9-12-2018
 
 # This file is loaded from ._bashLoader 'array for loop'
-echo "	.bashSpecial loaded successfully"
+echo "	.bashInits loaded successfully"
 
-echo "		...but is not used."
+# echo "		...but is not used."
+
+if [ -f /usr/local/bin/pod ]; then
+	echo "		...cocoapods running."
+else
+	answer=""
+	read -p "Would you like to install cocoapods? (y)" answer
+	if [ $answer == "y" ]; then 
+		sudo gem install cocoapods
+ 	fi
+fi
 
 # Enable screen sharing to remote using ssh on Raspberry Pi, etc.
 #vncserver :1
