@@ -65,6 +65,6 @@ alias passwdLogin="$EXECUTABLES/sshPasswordSwitch.sh"
 	
 ### BASH SSH ALIASES---->
 
-alias macbook="ssh jason@10.0.1.35"
-alias raspzw1="ssh pi@10.0.1.55"
-alias rasp3b="ssh pi@10.0.1.54"
+alias macbook="ssh jason@10.0.1.31"
+alias raspzw1="ssh pi@10.0.1.47"
+alias rasp3b="ssh pi@10.0.1.48"
