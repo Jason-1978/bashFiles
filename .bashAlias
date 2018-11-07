@@ -62,6 +62,9 @@ alias keySend="$EXECUTABLES/ssh-keySend.sh"
 alias passwdLogin="$EXECUTABLES/sshPasswordSwitch.sh"
 	# use this to deny, allow or set back to default remote ssh login through passwords
 	# ARGS: --yes --no --default
+alias keyboard="$EXECUTABLES/keyboardToggle.sh"
+	# toggle builtin macbook keyboard off (or on)
+	# Use y or n to answer prompt (any other input aborts
 	
 ### BASH SSH ALIASES---->
 
