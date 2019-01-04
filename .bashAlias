@@ -64,11 +64,13 @@ alias passwdLogin="$EXECUTABLES/sshPasswordSwitch.sh"
 	# ARGS: --yes --no --default
 alias keyboard="$EXECUTABLES/keyboardToggle.sh"
 	# toggle builtin macbook keyboard off (or on)
-	# Use y or n to answer prompt (any other input aborts
-	
+	# Use y or n to answer prompt (any other input aborts)
+alias core_temp="/opt/vc/bin/vcgencmd measure_temp"
+        
 ### BASH SSH ALIASES---->
 
 alias macbook="ssh jason@10.0.1.31"
 alias raspzw1="ssh pi@10.0.1.47"
 alias rasp3b="ssh pi@10.0.1.48"
 alias octopi="ssh pi@10.0.1.45"
+
