@@ -65,8 +65,9 @@ alias passwdLogin="$EXECUTABLES/sshPasswordSwitch.sh"
 alias keyboard="$EXECUTABLES/keyboardToggle.sh"
 	# toggle builtin macbook keyboard off (or on)
 	# Use y or n to answer prompt (any other input aborts)
-alias health="$EXECUTABLES/coreTemp.sh"
-        
+alias health="$EXECUTABLES/system_health.sh"
+	#
+
 ### BASH SSH ALIASES---->
 
 alias macbook="ssh jason@10.0.1.31"
