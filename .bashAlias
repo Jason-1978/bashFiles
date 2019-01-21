@@ -73,5 +73,5 @@ alias health="$EXECUTABLES/system_health.sh"
 alias macbook="ssh jason@10.0.1.31"
 alias raspzw1="ssh pi@10.0.1.47"
 alias rasp3b="ssh pi@10.0.1.48"
-alias octopi="ssh pi@10.0.1.45"
+alias octopi="ssh pi@10.0.1.49"
 
