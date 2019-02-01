@@ -4,8 +4,8 @@
 # NOTE--> Needs to be converted into functions & needs file already exists protection
 ####
 
-fileName=$1
-fileType=$2
+fileType=$1
+fileName=$2
 fileClosed=$3
 
 function format() {
@@ -32,10 +32,10 @@ function openFile () {
 		then	
 			if [ "$fileClosed" != "-c" ]
 				then
-					vi $fileName
+					nano $fileName
 			fi
 	else
-		vi $fileName
+		nano $fileName
 	fi
 }
 
