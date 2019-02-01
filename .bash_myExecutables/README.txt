@@ -1,5 +1,5 @@
 
-Note: The scripts in this directory are auto loaded through ._bashLoasder through .bash_profile and have aliases kept in .bashAliases
+Note: The scripts in this directory are auto loaded through ._bashLoader through .bash_profile and have aliases kept in .bashAliases
 
 #############################################
 
