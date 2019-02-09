@@ -11,15 +11,19 @@
 
 #############################################
 
+OS=$(uname)
 
-read -p "Turn builtin keyboard off (y or n)?" input
 
-if [ "$input" == "y" ]
-	then
-		sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext
-elif [ "$input" == "n" ]
-	then
-		sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext
-else
-		echo "Script aborted (Please enter valid arg)"
+if [ $OS == "Darwin" ]; then
+	read -p "Turn builtin keyboard off (y or n)?" input
+
+	if [ "$input" == "y" ]
+		then
+			sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext
+	elif [ "$input" == "n" ]
+		then
+			sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext
+	else
+			echo "Script aborted (Please enter valid arg)"
+	fi
 fi
