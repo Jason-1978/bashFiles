@@ -67,6 +67,7 @@ alias keyboard="$EXECUTABLES/keyboardToggle.sh"
 	# Use y or n to answer prompt (any other input aborts)
 alias health="$EXECUTABLES/system_health.sh"
 	# Displays system appropriate health stats such as core temperature, etc.
+alias packIn="$EXECUTABLES/packageInstaller.sh"
 
 ### BASH SSH ALIASES---->
 
