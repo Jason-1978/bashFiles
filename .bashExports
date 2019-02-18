@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# This file is loaded from ._bashLoader 'array for loop'
+echo "	.bashExports loaded successfully"
+
+#############################################
+
+# Author: Jason Kralik
+# Purpose: 
+#  
+# FileName: .bashExports.sh
+# Created: 02/17/19 
+# Modifed: 
+
+#############################################
+
+# --> added by Jason to enable my scripts --:
+export PATH="$HOME/.bash/.bash_myExecutables:$PATH"

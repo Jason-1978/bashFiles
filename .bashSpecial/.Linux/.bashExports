@@ -5,7 +5,10 @@ echo "	.bashSpecial loaded successfully"
 
 # System Specific Exports for Linux Distros
 
-# --> added by Jason to enable myScripts --:
-export PATH="$HOME/.bash/.bash_myExecutables/bin:$PATH"
+echo "                ...but is not used."
+
+# --> moved to .bashExports by Jason --:
+
+#export PATH="$HOME/.bash/.bash_myExecutables:$PATH"
 
 
