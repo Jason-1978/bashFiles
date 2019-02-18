@@ -33,6 +33,10 @@ alias lso="ls -AoFG"
 alias less="less -M"
 	# adds file path & % at bottom of each page in less
 
+alias python="$echo python2.7"
+
+alias python="$echo python3.7"
+
 ### BASH SYSTEM ALIASES---->
 
 alias blogin="$exec bash --login"

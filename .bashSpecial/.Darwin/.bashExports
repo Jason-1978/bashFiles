@@ -1,14 +1,11 @@
 #!/bin/bash
 
 # This file is loaded from ._bashLoader 'array for loop'
-echo "	.bashSpecial loaded successfully"
+echo "	.bashExports loaded successfully"
 
 # System Specific Exports for my MacBook
 
-# --> added by Anaconda3 5.1.0 installer --:
-export PATH="/anaconda3/bin:$PATH"
+echo "                ...but is not used."
 
-# --> added by Jason to enable myScripts --:
-export PATH="$HOME/.bash/.bash_myExecutables/bin:$PATH"
-
-
+# --> moved to .bashExports by Jason --:
+#export PATH="$HOME/.bash/.bash_myExecutables/bin:$PATH"
