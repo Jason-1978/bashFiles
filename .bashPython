@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "	.bashPython loaded successfully"
+echo "	${BLF}.bashPython${CLEAR} loaded successfully"
 
 #############################################
 

@@ -1,0 +1,61 @@
+#!/bin/bash
+
+#############################################
+
+# Author: Jason Kralik
+# Purpose: Create consistant ASCII color in Terminal 
+#  
+# FileName: colorFormat.sh
+# Created: 02/27/19 
+# Modifed: 
+
+#############################################
+
+# Foreground (character) colors:
+	fBLACK=$(tput setaf 0);
+	fRED=$(tput setaf 1);
+	fGREEN=$(tput setaf 2);
+	fYELLOW=$(tput setaf 3);
+	fBLUE=$(tput setaf 4);
+	fMAGENTA=$(tput setaf 5);
+	fCYAN=$(tput setaf 6);
+	fWHITE=$(tput setaf 7);
+	fGREY=$(tput setaf 8);
+ 	fDARK_RED=$(tput setaf 9);
+	fGREEN=$(tput setaf 10);
+	fWHITE=$(tput setaf 15);
+	fMILD_BLUE=$(tput setaf 20);
+	fLIGHT_BLUE=$(tput setaf 27);
+ 	fDIM_GREEN=$(tput setaf 28);
+	fMILD_GREEN=$(tput setaf 35);
+ 	fDIM_BLUE=$(tput setaf 25);
+ 	fLIGHT_BLUE=$(tput setaf 69);
+ 	fMID_GREY=$(tput setaf 240);
+
+# Background colors:
+	bBLACK=$(tput setab 0);
+	bRED=$(tput setab 1);
+	bGREEN=$(tput setab 2);
+	bYELLOW=$(tput setab 3);
+	bBLUE=$(tput setab 4);
+	bMAGENTA=$(tput setab 5);
+	bCYAN=$(tput setab 6);
+	bWHITE=$(tput setab 7);
+	bGREY=$(tput setab 8);
+	bDARK_RED=$(tput setab 9);
+	bGREEN=$(tput setab 10);
+	bWHITE=$(tput setab 15);
+	bDARK_BLUE=$(tput setab 18);
+	bLIGHT_BLUE=$(tput setab 27);
+	bMILD_GREEN=$(tput setab 35);
+	bGREY_BLUE=$(tput setab 69);
+
+# Formats:
+	BOLD=$(tput bold);
+	UNDERLINE=$(tput smul);
+	STANDOUT=$(tput smso);
+	CLEAR=$(tput sgr0);
+
+# Special Formats:
+	BLF=${fCYAN};
+

@@ -1,12 +1,14 @@
 #!/bin/bash
 
+
+
 # Author: Jason Kralik
 # Purpose: Automate presets for this machine.
 # Created: 8-13-2018
 # Modified: 9-12-2018
 
 # This file is loaded from ._bashLoader 'array for loop'
-echo "	.bashInits loaded successfully"
+echo "	${BLF}.bashInits${CLEAR} loaded successfully"
 
 # echo "		...but is not used."
 

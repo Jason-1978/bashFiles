@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This file is loaded from ._bashLoader 'array for loop'
-echo "	.bashCustom loaded successfully..."
+echo "	${BLF}.bashCustom${CLEAR} loaded successfully..."
 echo "		...includes prompt & color customizations..."
 
 # The various escape codes that we can use to color our prompt.
@@ -78,22 +78,22 @@ function prompt_git() {
 
 			# Check for uncommitted changes in the index.
 			if ! $(git diff --quiet --ignore-submodules --cached); then
-				s+='+';
+				s+='changes uncommited ';
 			fi;
 
 			# Check for unstaged changes.
 			if ! $(git diff-files --quiet --ignore-submodules --); then
-				s+='!';
+				s+='unstaged changes ';
 			fi;
 
 			# Check for untracked files.
 			if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-				s+='?';
+				s+='untracked files ';
 			fi;
 
 			# Check for stashed files.
 			if $(git rev-parse --verify refs/stash &>/dev/null); then
-				s+='$';
+				s+='stashed files ';
 			fi;
 
 		fi;
@@ -105,31 +105,36 @@ function prompt_git() {
 			git rev-parse --short HEAD 2> /dev/null || \
 			echo '(unknown)')";
 
-		[ -n "${s}" ] && s=" [${s}]";
+		[ -n "${s}" ] && s="[ ${s}]";
 
-		echo -e "${1}${branchName}${2}${s}";
+		echo -e "${fRED}${1}${fRED}${branchName}${CLEAR_FORMAT} branch\n${2}${s}";
 	else
 		return;
 	fi;
 }
 
 # Highlight the user name when logged in as root.
-if [[ "${USER}" == "root" ]]; then
-	userStyle="${BOLD}${fRED}";
-else
-	userStyle="${fLIGHT_BLUE}";
-fi;
+function set_user () {
+	if [[ "${USER}" == "root" ]]; then
+		userName="${BOLD}${fRED}\u";
+	else
+		userName="${fLIGHT_BLUE}\u";
+	fi;
+}
 
 # Highlight the hostname when connected via SSH.
-if [[ "${SSH_TTY}" ]]; then
-	hostStyle="\[${BOLD}${fRED}\]\$";
-else
-	hostStyle="\[${fYELLOW}\]";
-fi;
+function set_host () {
+	if [[ "${SSH_TTY}" ]]; then
+		hostName="\[${BOLD}${fRED}\]\$\h";
+	else
+		hostName="\[${fYELLOW}\]\h";
+	fi;
+}
 
+# Set prompt.
 function set_prompt_symbol () {
   if test $1 -eq 0 ; then
-      PROMPT_SYMBOL="\[\$\]"
+      PROMPT_SYMBOL="\[${fGREEN}\[$\]"
   else
       PROMPT_SYMBOL="\[${fRED}\$${CLEAR_FORMAT}\]"
   fi
@@ -140,17 +145,23 @@ function set_virtualenv() {
   if test -z "$VIRTUAL_ENV" ; then
       PYTHON_VIRTUALENV=""
   else
-      PYTHON_VIRTUALENV="\n\[${fMID_GREY}\] virtualEnv: \[${fRED}\]`basename \"$VIRTUAL_ENV\"`\[ ${CLEAR_FORMAT}\] "
+      PYTHON_VIRTUALENV="\n\[${fMID_GREY}\]	virtualEnv: \[${fRED}\]`basename \"$VIRTUAL_ENV\"`\[ ${CLEAR_FORMAT}\] "
   fi
 }
 
 function set_bash_prompt() {
   # Set the PROMPT_SYMBOL variable. We do this first so we don't lose the
   # return value of the last command.
-  #set_prompt_symbol $?
+  set_prompt_symbol $?
 
   # Set the PYTHON_VIRTUALENV variable.
   set_virtualenv
+
+	# Set user style
+	set_user
+
+	# Set host style
+	set_host
 
   # Set the BRANCH variable.
   #set_git_branch
@@ -164,21 +175,28 @@ function set_bash_prompt() {
 #${PROMPT_SYMBOL} "
 
 # Date, Time & Bash Version
-PS1="\n"
+PS1="\n";
 PS1+="\[${INFO_LINE}\]\d \[${MINOR}\]@ \[${INFO_LINE}\]\t \[${MINOR}\]using \[\[${INFO_LINE}\]Bash \V\[${CLEAR_FORMAT}\]\n";
 PS1+="\[${BOLD}\]";
 # Username
-PS1+="\[${userStyle}\u";
-PS1+="\[${MINOR} @ ";
+PS1+="\[${BOLD}\]";
+PS1+="\[${userName}";
+PS1+="\[${CLEAR_FORMAT} @ ";
 # Hostname
-PS1+="\[${hostStyle}\H";
-PS1+="\[${MINOR} in ";
+PS1+="\[${BOLD}\]";
+PS1+="\[${hostName}";
+PS1+="\[${CLEAR_FORMAT} in ";
 # Working Directory
+PS1+="\[${BOLD}\]";
 PS1+="\[${fDIM_GREEN}\W";
+PS1+="\[${CLEAR_FORMAT}\]";
 # Git Info
-PS1+="\$(prompt_git \"\[${fGREY}\] on \[${fRED}\]\" \"\[${fGREY}\]\")"; # Git repository details
+PS1+="\[${CLEAR_FORMAT}\]";
+PS1+="\$(prompt_git \"\[${CLEAR_FORMAT}\] on \" \"\[${CLEAR_FORMAT}\]	git status: \[${fRED}\]\")";
+# Python Environment
 PS1+="\[${PYTHON_VIRTUALENV}\]";
-PS1+="\n\[${fGREEN}\]\$ ";
+# Prompt
+PS1+="\n\[${PROMPT_SYMBOL}\] ";
 PS1+="\[${CLEAR_FORMAT}\]";		# Reset
 
 }

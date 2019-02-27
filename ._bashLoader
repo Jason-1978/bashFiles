@@ -1,4 +1,7 @@
-echo "	._bashLoader is running..."
+# Ensure color formating in bash loading
+source ~/.bash/colorFormat
+
+echo "	${BLF}._bashLoader${CLEAR} is running..."
 
 # Bash runs by intitializing this file so from this file I am 
 #		intitializing the rest of my customizations by seperating 
@@ -36,7 +39,7 @@ declare -a special=(AliasSpec Exports Inits)
 
 OS=$(uname)
 
-echo "...${#special[@]} file(s) for $OS:"
+echo "...${#special[@]} file(s) for ${BLF}$OS${CLEAR}:"
 
 for i in "${special[@]}"
 do
