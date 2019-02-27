@@ -127,7 +127,7 @@ function set_host () {
 	if [[ "${SSH_TTY}" ]]; then
 		hostName="\[${BOLD}${fRED}\]\$\H";
 	else
-		hostName="\[${fYELLOW}\H";
+		hostName="\[${fYELLOW}${HOSTNAME}";
 	fi;
 }
 

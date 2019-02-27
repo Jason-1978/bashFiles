@@ -18,12 +18,20 @@ PYTHONCONFIGDIR="$HOME/.bash/.bashPythonConfig/"
 # Manually set by Jason for all bash shells to default the pipenv file to be kept in the project
 #	to ensure that when the directory is moved it will still function
 useHomebrew="true"
+OS=$(uname)
 
-if [ "$useHomebrew" == "true" ]; then
-	echo "		...using HomeBrew"
-	# Ensure user-installed binaries take precedence
-	export PATH="/usr/local/bin:$PATH"
-	source $PYTHONCONFIGDIR/homebrew.config
-else
-	echo "		...using system Python"
+if [ "$OS" == "Darwin" ]; then
+	if [ "$useHomebrew" == "true" ]; then
+		echo "		...using HomeBrew"
+		# Ensure user-installed binaries take precedence
+		export PATH="/usr/local/bin:$PATH"
+		source $PYTHONCONFIGDIR/homebrew.config
+	else
+		echo "		...using system Python"
+	fi
+elif [ "$OS" == "Linux" ]; then 
+	echo "		${bRED}ALERT: Python package manager needs to be set!${bRED}"
+else 
+	echo "    ${bRED}ALERT: Python package manager needs to be set!${bRED}"
 fi
+
