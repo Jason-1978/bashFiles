@@ -19,7 +19,7 @@ echo "	._bashLoader is running..."
 
 # For each name in file array load the cooresponding file--:
 
-declare -a names=(rc Alias Prompt Exports)
+declare -a names=( Alias Custom Exports Python )
 
 echo "...${#names[@]} general file(s):"
 

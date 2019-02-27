@@ -3,7 +3,7 @@
 # This file is loaded from ._bashLoader 'array for loop'
 echo "	.bashAlias loaded successfully"
 
-EXECUTABLES="$HOME/.bash/.bash_myExecutables/"
+EXECUTABLES="$HOME/.bash/.bash_myExecutables"
 
 ################################################
 #  ALIAS DIRECTORY:
@@ -28,14 +28,10 @@ alias grep="grep --color"
 	# adds color in grep
 alias ls="ls -al"
 	# adds / directory, * executable, @ symbolic link, = socket, % whiteout, | FIFO
-alias lso="ls -AoFG"
+alias lso="ls -AoFGT"
 	# -Ao alias for ls
 alias less="less -M"
 	# adds file path & % at bottom of each page in less
-
-alias python="$echo python2.7"
-
-alias python="$echo python3.7"
 
 ### BASH SYSTEM ALIASES---->
 
@@ -47,8 +43,10 @@ alias shutdown="sudo shutdown -h now"
 	# immediate shutdown
 alias reboot="sudo shutdown -r now"
 	# immediate reboot
-alias python3="/usr/bin/python3.7"
-	# python3 default set
+alias .bash="cd ~/.bash/ && tree -aIF '.git|.DS_Store|README.md|*.swp' && echo 'NOTE: .git, .DS_Store, README.md & .swp hidden from this tree '"
+	# move to .bash directory
+alias path="tr ':' '\n' <<< '$PATH'"
+	# Seperating the $PATH environmental variable into seperate lines for readablity.
 
 ### BASH EXECUTABLE ALIASES---->
 
@@ -92,6 +90,10 @@ alias checkURL="$EXECUTABLES/checkURL.sh"
 		# 501 Not implemented.
 		# 503 Service unavailable.
 		# 550 Permission denied.
+alias color="$EXECUTABLES/colors.sh"
+	# Prints 8x8 ANSI tput color chart starting at user input for 256 colors	
+alias allColors="$EXECUTABLES/allColors.sh"
+	# Prints complete 256 ANSI tput color chart.
 
 ## BASH SSH ALIASES---->
 
