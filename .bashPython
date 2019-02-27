@@ -30,8 +30,8 @@ if [ "$OS" == "Darwin" ]; then
 		echo "		...using system Python"
 	fi
 elif [ "$OS" == "Linux" ]; then 
-	echo "		${bRED}ALERT: Python package manager needs to be set!${bRED}"
+	echo "		${bRED}ALERT: Python package manager needs to be set!${CLEAR}"
 else 
-	echo "    ${bRED}ALERT: Python package manager needs to be set!${bRED}"
+	echo "    ${bRED}ALERT: Python package manager needs to be set!${CLEAR}"
 fi
 
