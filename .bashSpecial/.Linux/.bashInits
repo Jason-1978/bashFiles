@@ -6,7 +6,16 @@ echo "  ${BLF}.bashAlias${CLEAR} loaded successfully"
 # Author: Jason Kralik
 # Purpose: Automate presets for this machine.
 # Created: 8-13-2018
-# Modified:
+# Modified: 2-28-2019
+
 
 # Enable screen sharing to remote using ssh on Raspberry Pis:
-vncserver :1
+check=$(vncserver -test)
+
+if [ -n $check ]; then
+	$(systemctl enable vncserver-x11-serviced.service)
+	#vncserver :1
+else
+	echo "		...vncserver :1 already running."
+fi
+
