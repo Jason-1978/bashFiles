@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This file is loaded from ._bashLoader 'array for loop'
-echo "  .bashAlias loaded successfully"
+echo "  ${BLF}.bashAlias${CLEAR} loaded successfully"
 
 # Author: Jason Kralik
 # Purpose: Automate presets for this machine.
