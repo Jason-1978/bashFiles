@@ -128,7 +128,6 @@ function set_host () {
 		hostName="\[${BOLD}${fRED}\]\${HOSTNAME}";
 	else
 		hostName="\[${fYELLOW}\[${HOSTNAME}";
-		echo "host"
 	fi;
 }
 
