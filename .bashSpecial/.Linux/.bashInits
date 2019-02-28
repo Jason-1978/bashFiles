@@ -14,7 +14,7 @@ echo "	${BLF}.bashInits${CLEAR} loaded successfully"
 
 host=${HOSTNAME}
 
-if [ $host == "Octopi" ]; then
+if [ $host == "octopi" ]; then
 	echo "		...no vncserver."
 else
 	if vncserver -test ; then
