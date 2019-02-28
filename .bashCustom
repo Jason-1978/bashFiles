@@ -125,7 +125,7 @@ function set_user () {
 # Highlight the hostname when connected via SSH.
 function set_host () {
 	if [[ "${SSH_TTY}" ]]; then
-		hostName="\[${BOLD}${fRED}\]\$\H";
+		hostName="\[${BOLD}${fRED}\]\${HOSTNAME}";
 	else
 		hostName="\[${fYELLOW}\[${HOSTNAME}";
 		echo "host"
@@ -199,7 +199,6 @@ PS1+="\[${PYTHON_VIRTUALENV}\]";
 # Prompt
 PS1+="\n\[${PROMPT_SYMBOL}\] ";
 PS1+="\[${CLEAR_FORMAT}\]";		# Reset
-
 }
 
 # Tell bash to execute this function just before displaying its prompt.

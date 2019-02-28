@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This file is loaded from ._bashLoader 'array for loop'
-echo "  ${BLF}.bashAlias${CLEAR} loaded successfully"
+echo "	${BLF}.bashInits${CLEAR} loaded successfully"
 
 # Author: Jason Kralik
 # Purpose: Automate presets for this machine.
@@ -10,12 +10,18 @@ echo "  ${BLF}.bashAlias${CLEAR} loaded successfully"
 
 
 # Enable screen sharing to remote using ssh on Raspberry Pis:
-check=$(vncserver -test)
+#check=$(vncserver -test)
 
-if [ -n $check ]; then
-	$(systemctl enable vncserver-x11-serviced.service)
-	#vncserver :1
+host=${HOSTNAME}
+
+if [ $host == "Octopi" ]; then
+	echo "		...no vncserver."
 else
-	echo "		...vncserver :1 already running."
+	if vncserver -test ; then
+		echo "		...vncserver :1 already running."
+	else
+		#$(systemctl enable vncserver-x11-serviced.service)
+		vncserver :1
+		echo "		...vncserver :1 is starting."
+	fi
 fi
-
