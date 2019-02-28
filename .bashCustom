@@ -125,7 +125,7 @@ function set_user () {
 # Highlight the hostname when connected via SSH.
 function set_host () {
 	if [[ "${SSH_TTY}" ]]; then
-		hostName="\[${BOLD}${fRED}\]\$\H";
+		hostName="\[${BOLD}${fRED}\]\${HOSTNAME}";
 	else
 		hostName="\[${fYELLOW}\[${HOSTNAME}";
 		echo "host"
