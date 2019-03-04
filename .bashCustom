@@ -104,14 +104,15 @@ function set_virtualenv() {
 
 # Determine Python Version being used and its source.
 function get_python_info() {
+	PYTHON_VERSION=" & \[${INFO_LINE}\]$(python --version)\[${CLEAR}\]"
+	
 	if brew ls --versions pyenv > /dev/null; then
-			PYTHON_VERSION="\n\[${fMID_GREY}\]	pyenv: \[${CLEAR}\]"
+			PYTHON_VERSION+=" (pyenv)\n"
 	else
   	####### NOTE: Should add alternate Python version options; eg Anaconda, etc...
 		# Using system Python
-		PYTHON_VERSION="\n\[${fMID_GREY}\]	system python: \[${CLEAR}\]"
+		PYTHON_VERSION+=" (system)\n"
 	fi
-	PYTHON_VERSION+="\[${fRED}\]$(python --version)\[${CLEAR}\]"
 }
 
 function set_bash_prompt() {
@@ -144,7 +145,9 @@ function set_bash_prompt() {
 
 # Date, Time & Bash Version
 PS1="\n";
-PS1+="\[${INFO_LINE}\]\d \[${MINOR}\]@ \[${INFO_LINE}\]\t \[${MINOR}\]using \[\[${INFO_LINE}\]Bash \V\[${CLEAR}\]\n";
+PS1+="\[${INFO_LINE}\]\d \[${MINOR}\]@ \[${INFO_LINE}\]\t \[${MINOR}\]using \[\[${INFO_LINE}\]Bash \V\[${CLEAR}\]";
+# PyEnv
+PS1+="\[${PYTHON_VERSION}\]";
 PS1+="\[${BOLD}\]";
 # Username
 PS1+="\[${BOLD}\]";
@@ -163,8 +166,6 @@ PS1+="\[${CLEAR}\]";
 PS1+="\$(prompt_git \"\[${CLEAR}\] on \" \"\[${CLEAR}\]	git status: \[${fRED}\]\")";
 # Python Environment
 PS1+="\[${PYTHON_VIRTUALENV}\]";
-# PyEnv
-PS1+="\[${PYTHON_VERSION}\]";
 # Prompt
 PS1+="\n\[${PROMPT_SYMBOL}\] ";
 PS1+="\[${CLEAR}\]";		# Reset
