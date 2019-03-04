@@ -99,7 +99,7 @@ function prompt_git() {
 			# Clean tree status.
 			if [ $s == '' ]; then
 				s+='tree_clean ';
-			fi
+			fi;
 
 		fi;
 
