@@ -98,7 +98,8 @@ function prompt_git() {
 			
 			# Clean tree status.
 			if [ -z '$s' ]; then
-				s+='tree_clean ';
+				$s='tree_clean ';
+				echo "tree_cleen";
 			fi;
 
 		fi;
