@@ -13,7 +13,7 @@ echo "	${BLF}.bashInits${CLEAR} loaded successfully"
 # echo "		...but is not used."
 
 if [ -f /usr/local/bin/pod ]; then
-	echo "		...cocoapods running."
+	echo "		...${BLF}cocoapods${CLEAR} running."
 else
 	answer=""
 	read -p "Would you like to install cocoapods? (y)" answer

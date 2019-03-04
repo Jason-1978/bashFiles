@@ -44,7 +44,7 @@ alias shutdown="sudo shutdown -h now"
 	# immediate shutdown
 alias reboot="sudo shutdown -r now"
 	# immediate reboot
-alias .bash="cd ~/.bash/ && tree -aIF '.git|.DS_Store|README.md|*.swp' && echo 'NOTE: .git, .DS_Store, README.md & .swp hidden from this tree '"
+alias .bash="cd ~/.bash/ && tree -aIF '.git*|.DS_Store|README.md|*.swp' && echo 'NOTE: .git, .gitignore, .DS_Store, README.md & .swp hidden from this tree '"
 	# move to .bash directory
 alias path="tr ':' '\n' <<< '$PATH'"
 	# Seperating the $PATH environmental variable into seperate lines for readablity.
