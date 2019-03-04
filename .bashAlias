@@ -28,8 +28,9 @@ alias grep="grep --color"
 	# adds color in grep
 alias ls="ls -al"
 	# adds / directory, * executable, @ symbolic link, = socket, % whiteout, | FIFO
-alias lso="ls -AoFGT"
+alias lso="ls -AoFG"
 	# -Ao alias for ls
+	# additional config in ~/.bash/.bashSpecial/.Darwin/.bashAliasSpec
 alias less="less -M"
 	# adds file path & % at bottom of each page in less
 

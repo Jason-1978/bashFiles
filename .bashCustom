@@ -78,23 +78,28 @@ function prompt_git() {
 
 			# Check for uncommitted changes in the index.
 			if ! $(git diff --quiet --ignore-submodules --cached); then
-				s+='changes uncommited ';
+				s+='changes_uncommited ';
 			fi;
 
 			# Check for unstaged changes.
 			if ! $(git diff-files --quiet --ignore-submodules --); then
-				s+='unstaged changes ';
+				s+='unstaged_changes ';
 			fi;
 
 			# Check for untracked files.
 			if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-				s+='untracked files ';
+				s+='untracked_files ';
 			fi;
 
 			# Check for stashed files.
 			if $(git rev-parse --verify refs/stash &>/dev/null); then
-				s+='stashed files ';
+				s+='stashed_files ';
 			fi;
+			
+			# Clean tree status.
+			if [ $s == '' ]; then
+				s='tree_clean ';
+			fi
 
 		fi;
 
