@@ -102,6 +102,18 @@ function set_virtualenv() {
   fi
 }
 
+# Determine Python Version being used and its source.
+function get_python_info() {
+	if brew ls --versions pyenv > /dev/null; then
+			PYTHON_VERSION="\n\[${fMID_GREY}\]	pyenv: \[${CLEAR}\]"
+	else
+  	####### NOTE: Should add alternate Python version options; eg Anaconda, etc...
+		# Using system Python
+		PYTHON_VERSION="\n\[${fMID_GREY}\]	system python: \[${CLEAR}\]"
+	fi
+	PYTHON_VERSION+="\[${fRED}\]$(python --version)\[${CLEAR}\]"
+}
+
 function set_bash_prompt() {
   # Set the PROMPT_SYMBOL variable. We do this first so we don't lose the
   # return value of the last command.
@@ -115,6 +127,9 @@ function set_bash_prompt() {
 
 	# Set host style
 	set_host
+	
+	# Get Python Info
+	get_python_info
 
   # Set the BRANCH variable.
   #set_git_branch
@@ -148,6 +163,8 @@ PS1+="\[${CLEAR}\]";
 PS1+="\$(prompt_git \"\[${CLEAR}\] on \" \"\[${CLEAR}\]	git status: \[${fRED}\]\")";
 # Python Environment
 PS1+="\[${PYTHON_VIRTUALENV}\]";
+# PyEnv
+PS1+="\[${PYTHON_VERSION}\]";
 # Prompt
 PS1+="\n\[${PROMPT_SYMBOL}\] ";
 PS1+="\[${CLEAR}\]";		# Reset
