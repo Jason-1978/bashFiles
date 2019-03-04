@@ -60,7 +60,7 @@ function prompt_git() {
 
 		[ -n "${s}" ] && s="[ ${s}]";
 
-		echo -e "${fRED}${1}${fRED}${branchName}${CLEAR_FORMAT} branch\n${2}${s}";
+		echo -e "${fRED}${1}${fRED}${branchName}${CLEAR} branch\n${2}${s}";
 	else
 		return;
 	fi;
@@ -89,7 +89,7 @@ function set_prompt_symbol () {
   if test $1 -eq 0 ; then
       PROMPT_SYMBOL="\[${fGREEN}\[$\]"
   else
-      PROMPT_SYMBOL="\[${fRED}\$${CLEAR_FORMAT}\]"
+      PROMPT_SYMBOL="\[${fRED}\$${CLEAR}\]"
   fi
 }
 
@@ -98,7 +98,7 @@ function set_virtualenv() {
   if test -z "$VIRTUAL_ENV" ; then
       PYTHON_VIRTUALENV=""
   else
-      PYTHON_VIRTUALENV="\n\[${fMID_GREY}\]	virtualEnv: \[${fRED}\]`basename \"$VIRTUAL_ENV\"`\[ ${CLEAR_FORMAT}\] "
+      PYTHON_VIRTUALENV="\n\[${fMID_GREY}\]	virtualEnv: \[${fRED}\]`basename \"$VIRTUAL_ENV\"`\[ ${CLEAR}\] "
   fi
 }
 
@@ -124,33 +124,33 @@ function set_bash_prompt() {
   # Set the bash prompt variable.
   #PS1="
 
-#${fGREEN}\u@\h${CLEAR_FORMAT}:${fYELLOW}\w${CLEAR_FORMAT${BRANCH}
+#${fGREEN}\u@\h${CLEAR}:${fYELLOW}\w${CLEAR${BRANCH}
 #${PROMPT_SYMBOL} "
 
 # Date, Time & Bash Version
 PS1="\n";
-PS1+="\[${INFO_LINE}\]\d \[${MINOR}\]@ \[${INFO_LINE}\]\t \[${MINOR}\]using \[\[${INFO_LINE}\]Bash \V\[${CLEAR_FORMAT}\]\n";
+PS1+="\[${INFO_LINE}\]\d \[${MINOR}\]@ \[${INFO_LINE}\]\t \[${MINOR}\]using \[\[${INFO_LINE}\]Bash \V\[${CLEAR}\]\n";
 PS1+="\[${BOLD}\]";
 # Username
 PS1+="\[${BOLD}\]";
 PS1+="\[${userName}";
-PS1+="\[${CLEAR_FORMAT} @ ";
+PS1+="\[${CLEAR} @ ";
 # Hostname
 PS1+="\[${BOLD}\]";
 PS1+="\[${hostName}";
-PS1+="\[${CLEAR_FORMAT} in ";
+PS1+="\[${CLEAR} in ";
 # Working Directory
 PS1+="\[${BOLD}\]";
 PS1+="\[${fDIM_GREEN}\W";
-PS1+="\[${CLEAR_FORMAT}\]";
+PS1+="\[${CLEAR}\]";
 # Git Info
-PS1+="\[${CLEAR_FORMAT}\]";
-PS1+="\$(prompt_git \"\[${CLEAR_FORMAT}\] on \" \"\[${CLEAR_FORMAT}\]	git status: \[${fRED}\]\")";
+PS1+="\[${CLEAR}\]";
+PS1+="\$(prompt_git \"\[${CLEAR}\] on \" \"\[${CLEAR}\]	git status: \[${fRED}\]\")";
 # Python Environment
 PS1+="\[${PYTHON_VIRTUALENV}\]";
 # Prompt
 PS1+="\n\[${PROMPT_SYMBOL}\] ";
-PS1+="\[${CLEAR_FORMAT}\]";		# Reset
+PS1+="\[${CLEAR}\]";		# Reset
 }
 
 # Tell bash to execute this function just before displaying its prompt.
