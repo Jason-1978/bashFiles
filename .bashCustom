@@ -48,12 +48,12 @@ function prompt_git() {
 			local loc=$(git rev-parse --verify master)
 			local rem=$(git rev-parse --verify origin/master)
 			if [ $loc != $rem ]; then
-				s+='unpushed repo ';
+				s+='unpushed_repo ';
 			fi
 
 			# Clean tree status.
 			if [ -z "$s" ]; then
-				s+='local_tree_clean (push-it) ';
+				s+='tree_clean ';
 			fi;
 
 		fi;
