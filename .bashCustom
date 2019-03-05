@@ -47,7 +47,7 @@ function prompt_git() {
 			# Compare Local & Remote repos
 			local loc=$(git rev-parse --verify master)
 			local rem=$(git rev-parse --verify origin/master)
-			if [ $loc == $rem ]; then
+			if [ $loc != $rem ]; then
 				s+='unpushed repo ';
 			fi
 
