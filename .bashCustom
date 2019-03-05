@@ -44,9 +44,16 @@ function prompt_git() {
 				s+='stashed_files ';
 			fi;
 
+			# Compare Local & Remote repos
+			loc=$(git rev-parse --verify master)
+			rev=$(git rev-parse --verify origin/master)
+			if [ "$loc" -eq "$rem" ]; then
+				s+='unpushed repo ';
+			fi
+
 			# Clean tree status.
 			if [ -z "$s" ]; then
-				s+='tree_clean ';
+				s+='local_tree_clean (push-it) ';
 			fi;
 
 		fi;
