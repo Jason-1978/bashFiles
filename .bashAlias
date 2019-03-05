@@ -48,6 +48,8 @@ alias .bash="cd ~/.bash/ && tree -aIF '.git*|.DS_Store|README.md|*.swp' && echo 
 	# move to .bash directory
 alias path="tr ':' '\n' <<< '$PATH'"
 	# Seperating the $PATH environmental variable into seperate lines for readablity.
+alias djd="cd ~Developer/Django_Development/"
+	# shortcut to Django Developement Directories
 
 ### BASH EXECUTABLE ALIASES---->
 
