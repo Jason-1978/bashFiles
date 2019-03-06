@@ -97,6 +97,8 @@ alias color="$EXECUTABLES/colors.sh"
 	# Prints 8x8 ANSI tput color chart starting at user input for 256 colors
 alias allColors="$EXECUTABLES/allColors.sh"
 	# Prints complete 256 ANSI tput color chart.
+alias gitRemoteTest="$EXECUTABLES/gitRemoteTest.sh"
+	# tests if a git remote exists by returning true or false strings
 
 ## BASH SSH ALIASES---->
 
