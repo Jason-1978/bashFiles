@@ -44,12 +44,19 @@ function prompt_git() {
 				s+='stashed_files ';
 			fi;
 
-			# Compare Local & Remote repos
-			local loc=$(git rev-parse --verify master)
-			local rem=$(git rev-parse --verify origin/master)
-			if [ $loc != $rem ]; then
-				s+='unpushed_repo ';
-			fi
+			# Test if git remote exists...
+			#git ls-remote --exit-code origin >> /dev/null
+      git remote | grep origin > /dev/null;
+      if test $? = 0; then
+      	# Compare Local & Remote repos
+				local loc=$(git rev-parse --verify master)
+				local rem=$(git rev-parse --verify origin/master)
+				if [ $loc != $rem ]; then
+          s+='unpushed_repo ';
+				fi;
+			else
+				s+='no_remote ';
+			fi;
 
 			# Clean tree status.
 			if [ -z "$s" ]; then
@@ -112,7 +119,7 @@ function set_virtualenv() {
 # Determine Python Version being used and its source.
 function get_python_info() {
 	PYTHON_VERSION=" & \[${INFO_LINE}\]$(python --version)\[${CLEAR}\]"
-	
+
 	if brew ls --versions pyenv > /dev/null; then
 			PYTHON_VERSION+=" (pyenv)\n"
 	else
@@ -135,7 +142,7 @@ function set_bash_prompt() {
 
 	# Set host style
 	set_host
-	
+
 	# Get Python Info
 	get_python_info
 
