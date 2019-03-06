@@ -94,7 +94,7 @@ alias checkURL="$EXECUTABLES/checkURL.sh"
 		# 503 Service unavailable.
 		# 550 Permission denied.
 alias color="$EXECUTABLES/colors.sh"
-	# Prints 8x8 ANSI tput color chart starting at user input for 256 colors	
+	# Prints 8x8 ANSI tput color chart starting at user input for 256 colors
 alias allColors="$EXECUTABLES/allColors.sh"
 	# Prints complete 256 ANSI tput color chart.
 
