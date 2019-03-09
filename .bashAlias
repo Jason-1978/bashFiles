@@ -44,12 +44,14 @@ alias shutdown="sudo shutdown -h now"
 	# immediate shutdown
 alias reboot="sudo shutdown -r now"
 	# immediate reboot
-alias .bash="cd ~/.bash/ && tree -aIF '.git*|.DS_Store|README.md|*.swp' && echo 'NOTE: .git, .gitignore, .DS_Store, README.md & .swp hidden from this tree '"
+alias .bash="cd ~/.bash/ && tree -aIF '.git*|.DS_Store|*.swp' && echo 'NOTE: .git, .gitignore, .DS_Store & .swp hidden from tree '"
 	# move to .bash directory
 alias path="tr ':' '\n' <<< '$PATH'"
 	# Seperating the $PATH environmental variable into seperate lines for readablity.
-alias djd="cd ~/Developer/Django_Development/"
+alias djd="cd ~/Developer/Django_Development/ && tree -aFL 2 -I '*.swp' && echo 'NOTE: Tree Level 2 & .swp hidden from tree'"
 	# shortcut to Django Developement Directories
+alias atom="open -a atom"
+	# concantenation of open -a atom
 
 ### BASH EXECUTABLE ALIASES---->
 
