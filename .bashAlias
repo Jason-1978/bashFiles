@@ -33,6 +33,8 @@ alias lso="ls -AoFG"
 	# additional config in ~/.bash/.bashSpecial/.Darwin/.bashAliasSpec
 alias less="less -M"
 	# adds file path & % at bottom of each page in less
+alias tree="tree -FC"
+	# adds symbols to end of files & adds colorization
 
 ### BASH SYSTEM ALIASES---->
 
