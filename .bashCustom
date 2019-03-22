@@ -130,7 +130,7 @@ function get_python_info() {
 }
 
 function get_node_info() {
-	NODE_VERSION=" Node $(node -v)\[${CLEAR}\]"
+	NODE_VERSION="Node $(node -v)\[${CLEAR}\]"
 	if test -n "$NVM_DIR"; then 
 		NODE_VERSION+=" (nvm)"
 	fi

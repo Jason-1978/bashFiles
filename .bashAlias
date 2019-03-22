@@ -52,6 +52,8 @@ alias path="tr ':' '\n' <<< '$PATH'"
 	# Seperating the $PATH environmental variable into seperate lines for readablity.
 alias djd="cd ~/Developer/Django_Development/ && tree -aFL 2 -I '*.swp' && echo 'NOTE: Tree Level 2 & .swp hidden from tree'"
 	# shortcut to Django Developement Directories
+alias rd="cd /Users/jason/Developer/React_Development && tree -aFL 2 -I '*.swp' && echo 'NOTE: Tree Level 2 & .swp hidden from tree'"
+
 alias atom="open -a atom"
 	# concantenation of open -a atom
 
