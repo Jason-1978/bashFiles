@@ -58,26 +58,26 @@ function prompt_git() {
 				s+='no_remote ';
 			fi;
 
-			# Clean tree status.
+# Clean tree status.
 			if [ -z "$s" ]; then
-				s+='tree_clean ';
+							s+='tree_clean ';
 			fi;
 
 		fi;
 
-		# Get the short symbolic ref.
-		# If HEAD isn’t a symbolic ref, get the short SHA for the latest commit
-		# Otherwise, just give up.
-		branchName="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
-			git rev-parse --short HEAD 2> /dev/null || \
-			echo '(unknown)')";
+# Get the short symbolic ref.
+# If HEAD isn’t a symbolic ref, get the short SHA for the latest commit
+# Otherwise, just give up.
+			branchName="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
+									git rev-parse --short HEAD 2> /dev/null || \
+									echo '(unknown)')";
 
-		[ -n "${s}" ] && s="[ ${s}]";
+			[ -n "${s}" ] && s="[ ${s}]";
 
-		echo -e "${fRED}${1}${fRED}${branchName}${CLEAR} branch\n${2}${s}";
-	else
-		return;
-	fi;
+			echo -e "${fRED}${1}${fRED}${branchName}${CLEAR} branch\n${2}${s}";
+			else
+							return;
+			fi;
 }
 
 # Highlight the user name when logged in as root.
@@ -118,14 +118,21 @@ function set_virtualenv() {
 
 # Determine Python Version being used and its source.
 function get_python_info() {
-	PYTHON_VERSION=" & \[${INFO_LINE}\]$(python --version)\[${CLEAR}\]"
+	PYTHON_VERSION="\[${INFO_LINE}\]$(python --version)\[${CLEAR}\]"
 
 	if brew ls --versions pyenv > /dev/null; then
-			PYTHON_VERSION+=" (pyenv)\n"
+			PYTHON_VERSION+=" (pyenv)"
 	else
   	####### NOTE: Should add alternate Python version options; eg Anaconda, etc...
 		# Using system Python
-		PYTHON_VERSION+=" (system)\n"
+		PYTHON_VERSION+=" (system)"
+	fi
+}
+
+function get_node_info() {
+	NODE_VERSION=" Node $(node -v)\[${CLEAR}\]"
+	if test -n "$NVM_DIR"; then 
+		NODE_VERSION+=" (nvm)"
 	fi
 }
 
@@ -146,6 +153,9 @@ function set_bash_prompt() {
 	# Get Python Info
 	get_python_info
 
+	# Get Node Info
+	get_node_info
+
   # Set the BRANCH variable.
   #set_git_branch
 	#prompt_git
@@ -160,9 +170,16 @@ function set_bash_prompt() {
 # Date, Time & Bash Version
 PS1="\n";
 PS1+="\[${INFO_LINE}\]\d \[${MINOR}\]@ \[${INFO_LINE}\]\t \[${MINOR}\]using \[\[${INFO_LINE}\]Bash \V\[${CLEAR}\]";
+PS1+=" & ";
 # PyEnv
+PS1+="\[${INFO_LINE}\]";
 PS1+="\[${PYTHON_VERSION}\]";
-PS1+="\[${BOLD}\]";
+PS1+="\[${MINOR}\]";
+PS1+=" & ";
+# Node Version
+PS1+="\[${INFO_LINE}\]";
+PS1+="\[${NODE_VERSION}\]";
+PS1+="\n\[${CLEAR}\]";
 # Username
 PS1+="\[${BOLD}\]";
 PS1+="\[${userName}";
